@@ -7,6 +7,7 @@ import { SubmitButton } from '../components/Buttton'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import Radio from '@material-ui/core/Radio'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormLabel from '@material-ui/core/FormLabel'
 
 export const Step2 = () => {
   const history = useHistory()
@@ -25,6 +26,7 @@ export const Step2 = () => {
     <MainCard>
       <Typography component="h2" variant="h5">Ваш возраст</Typography>
       <Form onSubmit={ submitHandler }>
+        <FormLabel component="legend">Не обязательное поле</FormLabel>
         <RadioGroup
           aria-label="age"
           name="age"
@@ -38,7 +40,7 @@ export const Step2 = () => {
           <FormControlLabel value="30-35" control={<Radio />} label="30-35" />
           <FormControlLabel value="<35" control={<Radio />} label="<35" />
         </RadioGroup>
-        <SubmitButton>Следующий шаг</SubmitButton>
+        <SubmitButton>{ value === '' ? 'пропустить': 'Следующий шаг' }</SubmitButton>
       </Form>
     </MainCard>
   )
