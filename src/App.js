@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Header } from './components/Header'
+import { Step1 } from './pages/Step1'
 
-const Step1 = () => <> Step 1 </>
 const Step2 = () => <> Step 2 </>
 const Step3 = () => <> Step 3 </>
 const Result = () => <> result </>
-
-const Header = () => <h1>Header</h1>
-
 
 function App() {
   return (
@@ -24,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
