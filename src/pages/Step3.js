@@ -10,9 +10,15 @@ import FormLabel from '@material-ui/core/FormLabel'
 
 export const Step3 = () => {
   const history = useHistory()
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState({
+    Php: false,
+    Java: false,
+    CSharp: false,
+    JavaScript: false
+  })
+
   const handleChange = (event) => {
-    setValue(event.target.value)
+    setValue({ ...value, [event.target.name]: event.target.checked });
   }
 
   const submitHandler = (e) => {
@@ -20,6 +26,7 @@ export const Step3 = () => {
     console.log(value)
     history.push('/step3')
   }
+  const { Php, Java, CSharp, JavaScript } = value
 
   return (
     <MainCard>
@@ -27,20 +34,20 @@ export const Step3 = () => {
       <Form onSubmit={ submitHandler }>
         <FormLabel component="legend">кек</FormLabel>
           <FormControlLabel
-            control={<Checkbox onChange={handleChange} name="checkedG" />}
+            control={<Checkbox checked={Php} onChange={handleChange} name="Php" />}
             label="Php"
             color="primary"
           />
           <FormControlLabel
-            control={<Checkbox  onChange={handleChange} name="checkedG" />}
+            control={<Checkbox checked={Java} onChange={handleChange} name="Java" />}
             label="Java"
           />
           <FormControlLabel
-            control={<Checkbox  onChange={handleChange} name="checkedG" />}
+            control={<Checkbox checked={CSharp} onChange={handleChange} name="CSharp" />}
             label="C#"
           />
           <FormControlLabel
-            control={<Checkbox  onChange={handleChange} name="checkedG" />}
+            control={<Checkbox checked={JavaScript} onChange={handleChange} name="JavaScript" />}
             label="JavaScript"
           />
         <SubmitButton>{ value === '' ? 'пропустить': 'Следующий шаг' }</SubmitButton>

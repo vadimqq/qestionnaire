@@ -12,6 +12,7 @@ import FormLabel from '@material-ui/core/FormLabel'
 export const Step2 = () => {
   const history = useHistory()
   const [value, setValue] = useState('')
+  
   const handleChange = (event) => {
     setValue(event.target.value)
   }
