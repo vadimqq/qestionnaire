@@ -2,7 +2,8 @@ const SET_INFO = "SET_INFO"
 
 const initialState = {
   firstName: '',
-  lastName: ''
+  lastName: '',
+  city: ''
 }
 
 export default function infoReducer (state = initialState, action) {
@@ -10,7 +11,8 @@ export default function infoReducer (state = initialState, action) {
     case SET_INFO:
       return {
         firstName: action.payload.firstName,
-        lastName: action.payload.lastName
+        lastName: action.payload.lastName,
+        city: action.payload.city
       }
     default:
       return state

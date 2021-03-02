@@ -19,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  title: {
-    fontSize: 14,
-  },
   pos: {
     marginBottom: 12,
+  },
+  title: {
+    marginRight: '10px'
   },
   languages: {
     display: 'flex',
@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(0.5),
     },
+  },
+  content: {
+    padding: '5px 0'
   }
 }))
 
@@ -44,37 +47,53 @@ export const Result = () => {
       <Typography component="h2" variant="h5">Ваш результат</Typography>
       <Card className={ styles.root } variant="outlined">
         <CardContent>
-          <Typography variant="h5" component="span">
-            Имя:
-          </Typography>
-          <Typography className={ styles.pos } color="textSecondary">
-            { info.firstName }
-          </Typography>
-          <Typography variant="h5" component="span">
-            Фамилия:
-          </Typography>
-          <Typography className={ styles.pos } color="textSecondary">
-          { info.lastName }
-          </Typography>
-          <Typography variant="h5" component="span">
-            Возраст:
-          </Typography>
-          <Typography className={ styles.pos } color="textSecondary">
-            { questionnaire.age }
-          </Typography>
-          <Typography variant="h5" component="span">
-            Языки програмирования:
-          </Typography>
-          <div className={ styles.languages }>
-            { questionnaire.languages.map((item, id) => {
-              return (
-              <Chip
-                variant="outlined"
-                size="small"
-                label={ item }
-                key={ id }
-              />)
-            }) }
+          <div className={ styles.content }>
+            <Typography variant="h5" component="span" className={ styles.title }>
+              Имя:
+            </Typography>
+            <Typography className={ styles.pos } color="textSecondary" component="span">
+              { info.firstName }
+            </Typography>
+          </div>
+          <div className={ styles.content }>
+            <Typography variant="h5" component="span" className={ styles.title }>
+              Фамилия:
+            </Typography>
+            <Typography className={ styles.pos } color="textSecondary" component="span">
+            { info.lastName }
+            </Typography>
+          </div>
+          <div className={ styles.content }>
+            <Typography variant="h5" component="span" className={ styles.title }>
+              Город:
+            </Typography>
+            <Typography className={ styles.pos } color="textSecondary" component="span">
+              { info.city }
+            </Typography>
+          </div>
+          <div className={ styles.content }>
+            <Typography variant="h5" component="span" className={ styles.title }>
+              Возраст:
+            </Typography>
+            <Typography className={ styles.pos } color="textSecondary" component="span">
+              { questionnaire.age }
+            </Typography>
+          </div>
+          <div className={ styles.content }>
+            <Typography variant="h5" component="span">
+              Языки програмирования:
+            </Typography>
+            <div className={ styles.languages }>
+              { questionnaire.languages.map((item, id) => {
+                return (
+                <Chip
+                  variant="outlined"
+                  size="small"
+                  label={ item }
+                  key={ id }
+                />)
+              }) }
+            </div>
           </div>
         </CardContent>
         <CardActions>
