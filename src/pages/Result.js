@@ -81,7 +81,7 @@ export const Result = () => {
           </div>
           <div className={ styles.content }>
             <Typography variant="h5" component="span">
-              Языки програмирования:
+              Языки програмирования
             </Typography>
             <div className={ styles.languages }>
               { questionnaire.languages.map((item, id) => {
