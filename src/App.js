@@ -9,15 +9,15 @@ const Result = () => <> result </>
 function App() {
   return (
     <>
-    <Header />
-    <Router>
-    <Switch>
-      <Route exact path="/" component={Step1} />
-      <Route path="/step2" component={Step2} />
-      <Route path="/step3" component={Step3} />
-      <Route path="/step4" component={Result} />
-    </Switch>
-    </Router>
+      <Header />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Step1} />
+          <Route path="/step2" component={Step2} />
+          <Route path="/step3" component={Step3} />
+          <Route path="/step4" component={Result} />
+        </Switch>
+      </Router>
     </>
   );
 }

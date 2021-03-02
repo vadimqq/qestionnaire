@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { DataProvider } from './DataContext';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
+import { Provider } from 'react-redux'
+import { store } from './store/rootReducer'
 
 ReactDOM.render(
   <React.StrictMode>
-    <DataProvider>
+    <Provider store={ store }>
       <div className="container">
         <App />
       </div>
-    </DataProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

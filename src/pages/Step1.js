@@ -8,6 +8,8 @@ import { MainCard } from '../components/MainCard'
 import { Form } from '../components/Form'
 import { InputText } from '../components/inputs/InputText'
 import { SubmitButton } from '../components/Buttton'
+import { useDispatch } from 'react-redux'
+import { setInfo } from '../store/infoReducer'
 
 const schema = yup.object().shape({
   firstName: yup
@@ -22,12 +24,14 @@ const schema = yup.object().shape({
 
 export const Step1 = () => {
   const history = useHistory()
+  const dispatch = useDispatch()
   const { register, handleSubmit, errors } = useForm({
     mode: 'onBlur',
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = () => {
+  const onSubmit = (data) => {
+    dispatch(setInfo(data))
     history.push('/step2')
   }
 

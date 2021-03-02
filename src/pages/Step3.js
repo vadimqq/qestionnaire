@@ -50,7 +50,7 @@ export const Step3 = () => {
             control={<Checkbox checked={JavaScript} onChange={handleChange} name="JavaScript" />}
             label="JavaScript"
           />
-        <SubmitButton>{ value === '' ? 'пропустить': 'Следующий шаг' }</SubmitButton>
+        <SubmitButton>Следующий шаг</SubmitButton>
       </Form>
     </MainCard>
   )
