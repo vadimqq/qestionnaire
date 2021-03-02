@@ -1,14 +1,16 @@
 import React from 'react'
 import * as yup from 'yup'
 import { useHistory } from 'react-router-dom'
-import Typography from '@material-ui/core/Typography'
+import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+
+import Typography from '@material-ui/core/Typography'
 import { MainCard } from '../components/MainCard'
 import { Form } from '../components/Form'
 import { InputText } from '../components/inputs/InputText'
 import { SubmitButton } from '../components/Buttton'
-import { useDispatch } from 'react-redux'
+
 import { setInfo } from '../store/infoReducer'
 
 const schema = yup.object().shape({
