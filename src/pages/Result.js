@@ -96,9 +96,6 @@ export const Result = () => {
             </div>
           </div>
         </CardContent>
-        <CardActions>
-          <Button size="small" variant="contained">Подтвердить</Button>
-        </CardActions>
       </Card>
     </MainCard>
   )
